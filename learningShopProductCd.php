@@ -38,5 +38,5 @@ class CdProduct
         return $base;
     }
 }
-$cd = new CdProduct("CD", "Дмитрий", "Лось", 100, 10, 10);
+$cd = new CdProduct("CD", "Дмитрий", "Лось", 100, 10);
 print $cd->getSummaryLine();

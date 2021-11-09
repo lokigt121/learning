@@ -37,5 +37,5 @@ class BookProduct
         return $base;
     }
 }
-$book = new BookProduct("Книга", "Дмитрий", "Лось", 100, 10, 10);
+$book = new BookProduct("Книга", "Дмитрий", "Лось", 100, 10);
 print $book->getSummaryLine();
