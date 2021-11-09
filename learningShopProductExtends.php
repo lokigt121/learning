@@ -22,35 +22,48 @@ class ShopProduct
         $this->price = $price;
         $this->numPages = $numPages;
         $this->playLength = $playLength;
-        $this->type = null;
-        if ($this->numPages != 0 && $this->playLength == 0) {
-            $this->type = "book";
-        }
-        elseif ($this->playLength != 0 && $this->numPages == 0)
-            $this->type = "cd";
-    }
-
-    public function getNumberOfPages()
-    {
-        return $this->numPages;
     }
 
     public function getProducer()
     {
         return $this->producerFirstName . " " . $this->producerMainName;
     }
+    public function getSummaryLine()
+    {
+        $base = "{$this->title} ( {$this->getProducer()})";
+        return $base;
+    }
+
+}
+
+class CdProduct extends ShopProduct
+{
+    public function getPlayLength()
+    {
+        return $this->playLength;
+    }
 
     public function getSummaryLine()
     {
-        $base = "{$this->title} ( {$this->getProducer()}";
-        if ($this->type == 'book') {
-            $base .= ": {$this->numPages} стр.";
-        }
-        elseif ($this->type == 'cd') {
-            $base .= ": Время звучания - {$this->playLength}";
-        }
+        $base = "{$this->title} ( {$this->getProducer()}): Время звучания - {$this->playLength}";
         return $base;
     }
 }
-$book = new ShopProduct("Книга", "Дмитрий", "Лось", 100, 10, 10);
-var_dump($book->type);
+class BookProduct extends ShopProduct
+{
+    public function getNumberOfPages()
+    {
+        return $this->numPages;
+    }
+    public function getSummaryLine()
+    {
+        $base = "{$this->title} ( {$this->getProducer()}): {$this->numPages} стр.";
+        return $base;
+    }
+}
+$book = new BookProduct("Книга", "Дмитрий", "Лось", 100, 10);
+var_dump($book);
+var_dump($book->getSummaryLine());
+$cd = new CdProduct("CD", "Владимир", "Топь", "2", 0, "200");
+var_dump($cd);
+var_dump($cd->getSummaryLine());
