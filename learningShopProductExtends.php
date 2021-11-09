@@ -67,3 +67,4 @@ var_dump($book->getSummaryLine());
 $cd = new CdProduct("CD", "Владимир", "Топь", "2", 0, "200");
 var_dump($cd);
 var_dump($cd->getSummaryLine());
+print "Автор: {$book->getProducer()}";
