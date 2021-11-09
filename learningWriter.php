@@ -9,8 +9,10 @@ class ShopProductWriter
             . " (" . $shopProduct->price . ") \n";
         print $str;
     }
-}
+}class Wrong
+{
 
+}
 $product1 = new ShopProduct(
     "Обучение",
     "Лось",

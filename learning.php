@@ -8,10 +8,10 @@ class ShopProduct
     public $price;
 
     public function __construct(
-        $title,
-        $producerMainName,
-        $producerFirstName,
-        $price
+        string $title,
+        string $producerMainName,
+        string $producerFirstName,
+        float $price
     ) {
         $this->title = $title;
         $this->producerMainName = $producerMainName;
@@ -23,6 +23,8 @@ class ShopProduct
         return $this->producerFirstName . " " . $this->producerMainName;
     }
 }
+$product1 = new ShopProduct("Строка", "True", "123", 123/*[]*/);
+var_dump($product1);
 
 //Листинг 03.02
 //$product1 = new ShopProduct(
