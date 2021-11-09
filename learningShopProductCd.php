@@ -3,7 +3,6 @@ class CdProduct
 {
     public $playLength;
     public $title;
-    public $numPages;
     public $producerMainName;
     public $producerFirstName;
     public $price;
