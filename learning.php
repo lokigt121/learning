@@ -1,22 +1,42 @@
 <?php
 // Листинг 03.01
-class ShopProduct{
-    public $title = "Стандартный товар";
-    public $producerMainName = "Фамилия автора";
-    public $producerFirstName = "Имя автора";
-    public $price = 0;
+class ShopProduct
+{
+    public $title;
+    public $producerMainName;
+    public $producerFirstName;
+    public $price;
+
+    public function __construct(
+        $title,
+        $producerMainName,
+        $producerFirstName,
+        $price
+    ) {
+        $this->title = $title;
+        $this->producerMainName = $producerMainName;
+        $this->producerFirstName = $producerFirstName;
+        $this->price = $price;
+      }
+
     public function getProducer() {
         return $this->producerFirstName . " " . $this->producerMainName;
     }
 }
 
 //Листинг 03.02
-$product1 = new ShopProduct();
-$product1->title = "Обучение";
-$product1->producerMainName = "Лось";
-$product1->producerFirstName = "Дмитрий";
-$product1->price = "6";
-print "Товар: $product1->title <br> Автор: {$product1->getProducer()} ";
+//$product1 = new ShopProduct(
+//    "Обучение",
+//    "Лось",
+//    "Дмитрий",
+//    10
+//);
+//print "Товар: $product1->title <br> Автор: {$product1->getProducer()} ";
+//$product1->title = "Обучение";
+//$product1->producerMainName = "Лось";
+//$product1->producerFirstName = "Дмитрий";
+//$product1->price = "6";
+
 
 //print $product1->getProducer();
 //$product2 = new ShopProduct();
