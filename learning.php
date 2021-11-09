@@ -23,7 +23,7 @@ class ShopProduct
         return $this->producerFirstName . " " . $this->producerMainName;
     }
 }
-$product1 = new ShopProduct("Строка", "True", "123", 123/*[]*/);
+$product1 = new ShopProduct("Строка", "True", "123", "123"/*[]*/);
 var_dump($product1);
 
 //Листинг 03.02

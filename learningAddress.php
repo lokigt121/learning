@@ -1,7 +1,7 @@
 <?php
 class AddressManager {
     private $addresses = ["209.131.36.159", "216.58.213.174"];
-    public function outputAddresses ($resolve)
+    public function outputAddresses (bool $resolve)
     {
         foreach ($this->addresses as $address) {
             print $address;
@@ -12,3 +12,8 @@ class AddressManager {
         }
     }
 }
+
+$manager = new AddressManager();
+
+$manager->outputAddresses("false");
+
