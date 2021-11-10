@@ -1,13 +1,9 @@
 <?php
-include "learning.php";
+include "learningShopProductExtends.php";
 class ShopProductWriter
 {
     public function write (ShopProduct $shopProduct)
     {
-        if(!($shopProduct instanceof CdProduct) && !($shopProduct instanceof BookProduct))
-        {
-            die("Передан неверный тип данных");
-        }
         $str = $shopProduct->title . ": "
             . $shopProduct->getProducer()
             . " (" . $shopProduct->price . ") \n";
